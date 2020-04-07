@@ -18,6 +18,8 @@ This container sets up tailscale for unraid.&#xD;
 &#xD;
 It will register as hostname unraid, if you want to change that see 'Extra Parameters' below and change to the hostname you would like.&#xD;
 &#xD;
+** IMPORTANT When you first start this container you must check the log file for the logon URL and then enter it into a browser and logon to tail scale. I would then also advise setting the keys to not expire for your unraid host **&#xD;
+&#xD;
 ** Note that this will expose your whole server into your tailscale VPN network ** &#xD;
 Do not do this if you do not understand what that means.</Overview>
   <Category>Network:VPN</Category>
@@ -27,7 +29,7 @@ Do not do this if you do not understand what that means.</Overview>
   <ExtraParams>--cap-add=NET_ADMIN --hostname=unraid</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1586259773</DateInstalled>
+  <DateInstalled>1586261257</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Private networks made easy&#xD;
@@ -38,6 +40,8 @@ Tailscale makes it as easy as installing an app and signing in.&#xD;
 This container sets up tailscale for unraid.&#xD;
 &#xD;
 It will register as hostname unraid, if you want to change that see 'Extra Parameters' below and change to the hostname you would like.&#xD;
+&#xD;
+** IMPORTANT When you first start this container you must check the log file for the logon URL and then enter it into a browser and logon to tail scale. I would then also advise setting the keys to not expire for your unraid host **&#xD;
 &#xD;
 ** Note that this will expose your whole server into your tailscale VPN network ** &#xD;
 Do not do this if you do not understand what that means.</Description>
