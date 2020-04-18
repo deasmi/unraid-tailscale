@@ -10,6 +10,7 @@ WORKDIR /go/src/tailscale
 #COPY go.sum .
 RUN apk add git
 RUN git clone https://github.com/tailscale/tailscale.git .
+RUN git checkout -b v0.97
 RUN go mod download
 
 COPY . .
