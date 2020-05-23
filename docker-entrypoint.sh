@@ -11,13 +11,15 @@ if [ ! -c /dev/net/tun ]; then
     mknod /dev/net/tun c 10 200
 fi
 
+# Start the daemon
 tailscaled --state=/state/tailscaled.state &
 
+# Let it get connected to the control plane
 sleep 10
 
+# Start the interface
 tailscale up
 
-while true
-do
-    sleep 60
-done
+# Do nothing until the end of time
+sleep infinity
+
