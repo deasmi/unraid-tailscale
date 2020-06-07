@@ -11,8 +11,8 @@ Edit dockerfile
 Build and push dev tag
 
 ~~~
-docker build -t deasmi/tailscale:dev .
-docker push deasmi/tailscale:dev
+docker build -t deasmi/tailscale:dev-[0-9.]+ .
+docker push deasmi/tailscale:dev-[0-9.]+
 ~~~
 
 Test and repeat on unraid with dev tag until happy
