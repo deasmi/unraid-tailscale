@@ -9,9 +9,10 @@ Process for upgrade
 
 Edit dockerfile
 Build and push dev tag
+Note to use --no-cache to ensure clear pull of code and build
 
 ~~~
-docker build -t deasmi/tailscale:dev-[0-9.]+ .
+docker build --no-cache -t deasmi/tailscale:dev-[0-9.]+ .
 docker push deasmi/tailscale:dev-[0-9.]+
 ~~~
 
