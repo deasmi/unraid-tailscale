@@ -12,8 +12,8 @@ Build and push dev tag
 Note to use --no-cache to ensure clear pull of code and build
 
 ~~~
-docker build --no-cache -t deasmi/tailscale:dev-[0-9.]+ .
-docker push deasmi/tailscale:dev-[0-9.]+
+docker build --no-cache -t deasmi/unraid-tailscale:dev-[0-9.]+ .
+docker push deasmi/unraid-tailscale:dev-[0-9.]+
 ~~~
 
 Test and repeat on unraid with dev tag until happy
