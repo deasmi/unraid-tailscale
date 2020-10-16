@@ -18,7 +18,7 @@ tailscaled --state=/state/tailscaled.state &
 sleep 10
 
 # Start the interface
-tailscale up
+tailscale up --advertise-routes=192.168.1.0/24
 
 # Do nothing until the end of time
 sleep infinity
