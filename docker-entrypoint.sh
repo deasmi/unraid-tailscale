@@ -18,7 +18,7 @@ tailscaled --state=/state/tailscaled.state &
 sleep 10
 
 # Start the interface
-tailscale up
+tailscale up ${UP_FLAGS:-}
 
 # Do nothing until the end of time
 sleep infinity
