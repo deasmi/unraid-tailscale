@@ -10,12 +10,13 @@ WORKDIR /go/src/tailscale
 #COPY go.sum .
 RUN apk add git
 RUN git clone https://github.com/tailscale/tailscale.git .
-RUN git checkout -b v1.2.9
+RUN git checkout -b v1.4.5
 RUN go mod download
 
 COPY . .
 
-RUN go install -v ./cmd/...
+RUN go install tailscale.com/cmd/tailscale
+RUN go install tailscale.com/cmd/tailscaled
 
 FROM alpine:3.11
 RUN apk add --no-cache ca-certificates iptables iproute2
