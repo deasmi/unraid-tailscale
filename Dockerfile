@@ -2,21 +2,17 @@
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
 
-FROM golang:1.15-alpine AS build-env
+FROM golang:1.16-alpine AS build-env
 
 WORKDIR /go/src/tailscale
 
-#COPY go.mod .
-#COPY go.sum .
 RUN apk add git
 RUN git clone https://github.com/tailscale/tailscale.git .
 RUN git checkout -b v1.6.0
+
 RUN go mod download
-
-COPY . .
-
-RUN go install tailscale.com/cmd/tailscale
-RUN go install tailscale.com/cmd/tailscaled
+RUN go install ./cmd/tailscale
+RUN go install ./cmd/tailscaled
 
 FROM alpine:3.11
 RUN apk add --no-cache ca-certificates iptables iproute2
