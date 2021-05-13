@@ -2,7 +2,7 @@
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
 
-FROM golang:1.15-alpine AS build-env
+FROM golang:1.16-alpine AS build-env
 
 WORKDIR /go/src/tailscale
 
@@ -10,7 +10,7 @@ WORKDIR /go/src/tailscale
 #COPY go.sum .
 RUN apk add git
 RUN git clone https://github.com/tailscale/tailscale.git .
-RUN git checkout -b v1.6.0
+RUN git checkout -b v1.8.3
 RUN go mod download
 
 COPY . .
