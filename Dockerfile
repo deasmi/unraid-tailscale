@@ -1,24 +1,9 @@
 # Portions Copyright (c) 2020 Tailscale Inc & AUTHORS All rights reserved.
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
-
-FROM golang:1.16-alpine AS build-env
-
-WORKDIR /go/src/tailscale
-
-#COPY go.mod .
-#COPY go.sum .
-RUN apk add git
-RUN git clone --depth 1 --branch v1.10.1 https://github.com/tailscale/tailscale.git .
-RUN go mod download
-
-COPY . .
-
-RUN go install tailscale.com/cmd/tailscale
-RUN go install tailscale.com/cmd/tailscaled
-
-FROM alpine:3.11
+FROM alpine:latest as tailscal
 RUN apk add --no-cache ca-certificates iptables iproute2
-COPY --from=build-env /go/bin/* /usr/local/bin/
-COPY docker-entrypoint.sh /usr/local/bin
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+WORKDIR /app
+ADD latest /app
+COPY docker-entrypoint.sh /app
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
