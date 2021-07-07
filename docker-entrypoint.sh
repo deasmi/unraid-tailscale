@@ -12,13 +12,13 @@ if [ ! -c /dev/net/tun ]; then
 fi
 
 # Start the daemon
-tailscaled --state=/state/tailscaled.state &
+/app/tailscaled --state=/state/tailscaled.state &
 
 # Let it get connected to the control plane
 sleep 10
 
 # Start the interface
-tailscale up ${UP_FLAGS:-}
+/app/tailscale up ${UP_FLAGS:-}
 
 # Do nothing until the end of time
 sleep infinity

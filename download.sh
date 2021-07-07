@@ -11,20 +11,11 @@ wget  $PACKAGE >/dev/null 2>&1
 echo "Unpacking"
 DIR=$(mktemp -d -p .)
 
-(cd $DIR ; tar xf ../${TSFILE} --strip-components=1 )
-
-if [ -L latest ]; then
-    rm latest
-fi
+(cd $DIR ; tar vxf ../${TSFILE} --strip-components=1 )
 
 ln -s $DIR latest
 
-echo "Building"
-docker build -t deasmi/unraid-tailscale:dev-$VERSION .
+echo $(pwd)
 
-echo "Cleaning up"
-rm -rf $DIR
-rm latest
-rm $TSFILE
 
 
