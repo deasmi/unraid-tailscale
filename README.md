@@ -11,9 +11,3 @@ support for this usage.
 Please note that support cannot be provided for the use of UP_FLAGS
 
 
-## Versions > 1.8.3
-
-Please note that there was a config change after 1.8.4 that will prevent the container staying up if you upgrade from a previous version.
-
-In order to fix this run the fix_config.py script against your tailscaled.state file.
-

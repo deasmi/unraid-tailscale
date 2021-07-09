@@ -1,7 +1,8 @@
 FROM alpine:latest as build
 RUN apk add --no-cache bash wget
 WORKDIR /work
-COPY ./VERSION .
+ARG VERSION
+ENV VERSION ${VERSION}
 COPY ./download.sh .
 RUN ./download.sh 
 RUN ls 

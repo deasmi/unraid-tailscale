@@ -1,30 +1,19 @@
 Tags
 ----
 
-Docker Hub Tags: dev, [0-9].[0-9]
-Git Tags: [0-9].[0-9]
+Docker Hub Tags: (dev-)[0-9].[0-9].[0.9]
+Git Tags: [0-9].[0-9].[0-9]
 
-Process for upgrade
--------------------
+Run ./build.sh <version> (dev)
 
-Edit dockerfile
-Build and push dev tag
-Note to use --no-cache to ensure clear pull of code and build
+Will build 
+(dev)-<version> (x.y.z)
 
-~~~
-docker build --no-cache -t deasmi/unraid-tailscale:dev-[0-9.]+ .
-docker push deasmi/unraid-tailscale:dev-[0-9.]+
-~~~
+Will tag
+(dev)-<short version> (x.y)
 
-Test and repeat on unraid with dev tag until happy
+If dev build will also push both builds to docker hub
 
-Commit changes and create new git tag
-~~~
-git commit -m "..." Dockerfile
-git tag [0-9].[0-9]
-git push --tags`
-~~~
+Prod builds must be manually pushed
 
-Check DockerHub build status
 
-Tags used to include a v - this has been deprecated, tags to match exactly upstream code tags

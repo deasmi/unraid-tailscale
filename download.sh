@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=$(cat VERSION)
+# VERSION SHOULD BE IN ENV
 TSFILE=tailscale_${VERSION}_amd64.tgz
 PACKAGE="https://pkgs.tailscale.com/stable/${TSFILE}"
 
