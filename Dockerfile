@@ -5,7 +5,6 @@ ARG VERSION
 ENV VERSION ${VERSION}
 COPY ./download.sh .
 RUN ./download.sh 
-RUN ls -laR /work 
 
 FROM alpine:latest as deploy
 RUN apk add --no-cache ca-certificates iptables iproute2
