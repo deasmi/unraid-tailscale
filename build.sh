@@ -22,6 +22,13 @@ else
 fi
 
 docker build --no-cache --build-arg VERSION=$VERSION -t deasmi/unraid-tailscale:${FULL_TAG} .
+
+ret=$?
+if [ $ret -ne 0 ]; then
+	echo "Build failed"
+	exit 1;
+fi
+
 docker tag deasmi/unraid-tailscale:${FULL_TAG} deasmi/unraid-tailscale:${SHORT_TAG}
 
 if [ $DEV_BUILD != 1 ];
