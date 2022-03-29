@@ -1,6 +1,11 @@
 # unraid-tailscale
 Docker build files for tailscale on unraid
 
+![GitHub](https://img.shields.io/github/license/deasmi/unraid-tailscale)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/deasmi/unraid-tailscale)
+
+
+
 This is intentended to provide access to the unraid server itself over tailscale and does not act as a VPN gateway.
 It is possible to get this working using UP_FLAGS however as this was never the intention for this container I cannot provide
 support for this usage.
