@@ -12,7 +12,7 @@ if [ ! -c /dev/net/tun ]; then
 fi
 
 # Start the daemon
-/app/tailscaled --state=/state/tailscaled.state &
+/app/tailscaled --state=/state/tailscaled.state --statedir=/state/ &
 
 # Let it get connected to the control plane
 sleep 10
