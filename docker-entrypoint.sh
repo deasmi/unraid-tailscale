@@ -20,6 +20,13 @@ sleep 10
 # Start the interface
 /app/tailscale up ${UP_FLAGS:-}
 
+# Start downloads if enabled
+if [ "${ENABLE_DOWNLOADS}" = "TRUE" ]; then
+    echo "Enabling downloads"
+    /app/tailscale file get -wait=true -conflict=rename -loop=true /downloads &
+fi
+
+
 # Do nothing until the end of time
 sleep infinity
 
