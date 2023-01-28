@@ -25,13 +25,11 @@ if [ $ret -ne 0 ]; then
 fi
 
 echo "Unpacking"
-(tar vxf ../${TSFILE} --strip-components=1 )
-
-ln -s $DIR latest
-
+tar vxf ${TSFILE} --strip-components=1
+rm ${TSFILE}
 echo $(pwd)
 
-rm  ${TSFILE}
+
 
 # Start the daemon
 /app/tailscaled --state=/state/tailscaled.state --statedir=/state/ &
