@@ -33,6 +33,8 @@ ln -s $DIR latest
 
 echo $(pwd)
 
+rm  ${TSFILE}
+
 # Start the daemon
 /app/tailscaled --state=/state/tailscaled.state --statedir=/state/ &
 
