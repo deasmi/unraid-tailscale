@@ -25,9 +25,7 @@ if [ $ret -ne 0 ]; then
 fi
 
 echo "Unpacking"
-DIR=$(mktemp -d -p .)
-
-(cd $DIR ; tar vxf ../${TSFILE} --strip-components=1 )
+(tar vxf ../${TSFILE} --strip-components=1 )
 
 ln -s $DIR latest
 
