@@ -30,12 +30,7 @@ if [ $ret -ne 0 ]; then
 fi
 
 docker tag deasmi/unraid-tailscale:${FULL_TAG} deasmi/unraid-tailscale:${SHORT_TAG}
+docker push deasmi/unraid-tailscale:${FULL_TAG}
+docker push deasmi/unraid-tailscale:${SHORT_TAG}
 
-if [ $DEV_BUILD != 1 ];
-then
-   docker tag deasmi/unraid-tailscale:${FULL_TAG} deasmi/unraid-tailscale:latest
-else
-    docker push deasmi/unraid-tailscale:${FULL_TAG}
-    docker push deasmi/unraid-tailscale:${SHORT_TAG}
-fi
 
