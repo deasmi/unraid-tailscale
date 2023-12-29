@@ -15,6 +15,8 @@ support for this usage.
 ## Optional Env Vars
 
 - `UP_FLAGS` &ndash; Pass flags to the `tailscale up` command run on start-up
-Please note that support cannot be provided for the use of UP_FLAGS
+Please note that support cannot be provided for the use of `UP_FLAGS`
+- `DEAMON_FLAGS` &ndash; Pass flags to the `tailscaled` command run on start-up, for example to enable [Userspace Networking Mode](https://github.com/tailscale/tailscale/issues/5425)
+Please note that support cannot be provided for the use of `DEAMON_FLAGS`
 
 
